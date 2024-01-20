@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -35,7 +39,7 @@ body {
 }
 
 .accordion-body {
-  height: 900px;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,9 +80,8 @@ header > img {
 .container-flex {
   display: flex;
   /* flex-wrap: nowrap; */
-  justify-content: space-between;
-  align-items: center;
-  align-self: stretch; 
+  justify-content:space-between;
+  align-items: center; 
 }
 
 .label {
@@ -89,8 +92,8 @@ header > img {
 
 
 
-.container:hover,
-.container:focus {
+.container a:hover,
+.container a:focus {
   color: hsla(281, 83%, 54%, 1);
   cursor: pointer;
   font-weight: 600;
@@ -99,10 +102,6 @@ header > img {
 .container > img {
   width: 30px;
   height: 30px;
-}
-
-.container span {
-  opacity: 0;
 }
 
 .container {
@@ -125,15 +124,15 @@ header > img {
 
 /* Accordin settings */
 
-.accordion .container {
+/* .accordion .container {
   position: relative;
 }
 
 .accordion .label {
   position: relative;
-}
+} */
 
-.accordion .label::before {
+/* .accordion .label::before {
   content: url('../assets/images/icon-plus.svg');
   position: absolute;
   top: 50%;
@@ -142,38 +141,33 @@ header > img {
   height: 30px;
   transform: translateY(-50%);
   transition: 1.5s ease-out;
-}
+} */
 
 .accordion .content {
-  position: relative;
   max-height: 0;
   overflow: hidden;
-  transition: 0.5s ease-out;
+  transition: 0.3s ease-in-out;
 }
 
 .accordion .container.active .content {
   max-height: 200px;
 }
 
-.accordion .container.active .label::before {
+/* .accordion .container.active .label::before {
   content: url('../assets/images/icon-minus.svg');
-}
+} */
 
 
 /* Mobile view settings with media query */
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 598px) {
   .page-header {
     background: url('../assets/images/background-pattern-mobile.svg');
     height: 232px;
   }
 
-  .accordion-body {
-    height: 812px;
-  }
-
   .accordion {
-    max-width: 327px;
+    max-width: 313px;
     padding: 24px;
     border-radius: 8px;
     border: 1px solid #E3E3E3;
@@ -201,9 +195,20 @@ header > img {
   }
 
   /* Accordion plus and minus position */
-  .accordion .label::before {
+  /* .accordion .label::before {
     left: 250px;
-  }
+  } */
+}
+
+.attribution { 
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%);
 }
 
 
